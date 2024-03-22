@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Cars</title>
+    <link rel = "stylesheet" type="text/css" href='static/style.css'>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/car">Add a Car</a></li>
+            <li><a href="/view" class = "active">View Cars</a></li>
+            <li><a href="review">Add a Review</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+    <div class = "body">
+        <div class = "main">
+        <main>
+            <h2>All Cars</h2>
+            <table border = "2">
+                <tr>
+                    <th>Car Model</th>
+                    <th>Car Make</th>
+                    <th>Year</th>
+                </tr>
+                {% for car in cars %}
+                <tr>
+                    <td><a href = "/pictures/{{car[0]}}">{{car[1]}}</a></td>
+                    <td>{{car[2]}}</td>
+                    <td>{{car[3]}}</td>
+                </tr>
+                {% endfor %}
+            </table>   
+        </main>
+        </div>
+        <div class ="side">
+            <h2>Search System</h2>
+            <h2>Should sort by Make, Model and Year</h2>
+        </div>
+        <div class = "bottom">
+        </div>
+    </div>
+</body>
+</html>

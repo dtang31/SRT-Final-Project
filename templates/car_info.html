@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Info</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/car">Add a Car</a></li>
+            <li><a href="/view">View Cars</a></li>
+            <li><a href="/review">Add a Review</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class = "body">
+        <div class = "main">
+        <main>
+            <h1>{{car[1]}}, {{car[2]}}, {{car[3]}}</h1>
+            <img src="{{ url_for('static', filename='pictures/' + car[1] + ', ' + car[2] + ', ' + car[3] | string + '.jpg') }}">
+            <h3>&nbsp;Add a review</h3>
+            <form method = "POST" action = "/pictures/{{car[0]}}">
+                <label for = "user", id ="car_info">Name:</label><br>
+                <input type = "text", id ="car_info", name = "user", placeholder = "Your name"><br><br>
+                <input type ="hidden", name = "car", value = "{{ car[1] }}, {{ car[2] }}, {{ car[3] }}.">
+                <label for = "rating", id ="car_info">Rating:</label><br>
+                <input type = "number", min = 1, max = 10, id = "car_info", name = "rating", required><br><br>
+                <label for = "review", id ="car_info">Review:</label><br>
+                <textarea name = "review", placeholder = "Type your review here", required, id = "car_info_textarea"></textarea><br><br>
+                <input type = "Submit" value = "Submit", id ="submit">
+            </form>
+        </main>
+        </div>
+        <div class ="side">
+            <h3>Maybe let them add review from here?</h3>
+        </div>
+        <div class = "bottom">
+        </div>
+    </div>
+</body>
+</html>

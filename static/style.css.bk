@@ -1,0 +1,122 @@
+/* navigation bar */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#551170;
+    border-radius: 0.5em;
+}
+
+nav ul li {
+    float:left;
+}
+
+nav ul li a {
+display: block;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+color:#FFFFFF;
+}
+
+nav ul li a:hover:not(.active) {
+    background-color: #cc62cc80;
+}
+
+nav ul a.active {
+    background-color: #582658;
+    font-weight: bold;
+}
+
+nav ul li.right {
+    float: right;
+}
+/* End Navigation bar */
+
+/* homepage */
+.body {
+    display: flex;
+    justify-content: space-between;
+}
+.main {
+    text-align: left;
+    width: 78%;
+    height: 65vh;
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-radius: 0.5em;
+    white-space: pre-warp;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color:#80008080;
+    font-weight: bold;
+    overflow-y: auto;
+}
+
+.side {
+    text-align: left;
+    width: 20%;
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 0.5em;
+    white-space: pre-wrap;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    background-color: #762576;
+    color:#ffffff;
+    font-weight: normal;
+}
+
+
+.bottom {
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    border-radius: 0.5em;
+    white-space: pre-wrap;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    background-color: #943994;
+    color:#ffffff;
+    font-weight: normal;
+    position: absolute;
+    bottom: 5px;
+    width: 98.5%;
+    height: 27%;
+}
+.main img {
+    width: 45%;
+    height: auto;
+    float: left;
+    margin-right: 2em;
+}
+
+
+/* Review */
+#review {
+    width: 75%; /* Set width to 100% of its container */
+    height: 100px; /* Set height to 200 pixels */
+    resize: vertical; /* Allow vertical resizing */
+    /* Ensure cursor starts at top left */
+    caret-color: black;
+    padding: 10px;
+    box-sizing: border-box; 
+    white-space: pre-wrap;
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+    margin-bottom: 20px; 
+
+    position: relative;
+    left: 0;
+    outline: none;
+    
+    border-color: rgba(0, 0, 0, .15);
+    
+
+    }

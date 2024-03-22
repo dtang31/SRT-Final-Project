@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel = "stylesheet" type="text/css" href='static/style.css'>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/car">Add a Car</a></li>
+            <li><a href="/view">View Cars</a></li>
+            <li><a href="/review">Add a Review</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class = "body">
+        <div class = "main">
+        <main>
+            <h1>Reviews</h1>
+            <table border = "3">
+                <tr>
+                    <th>Name</th>
+                    <th>Car</th>
+                    <th>Date</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                <tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{user[1]}}</td>
+                    <td>{{user[2]}}</td>
+                    <td>{{user[3]}}</td>
+                    <td>{{user[4]}}</td>
+                    <td>{{user[5]}}</td>
+                    <td>
+                        <a href = "/like">Like</a>&nbsp;&nbsp;&nbsp;
+                        <a href = "/dislike">Dislike</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                    
+            </table>
+        </main>
+        </div>
+        <div class ="side">
+            <ol>
+                <li>User submit picture</li>
+                <li>Reviews can be made for non-existent cars</li>
+                <li>What to do at the bottom</li>
+                <li>Titles</li>
+        </div>
+        <div class = "bottom">
+        </div>
+    </div>
+</body>
+</html>

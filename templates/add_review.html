@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Review</title>
+    <link rel = "stylesheet" type="text/css" href='static/style.css'>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/car">Add a Car</a></li>
+            <li><a href="/view">View Cars</a></li>
+            <li><a href="review" class = "active">Add a Review</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class = "body">
+        <div class = "main">
+        <main>
+            <h2>Please Submit Your Review</h2>
+            <form method = "POST" action = "/review">
+                <label for = "user">Name:</label><br>
+                <input type = "text", id ="user", name = "user", placeholder = "Your name"><br><br>
+                
+                <div id = "make_model_year">
+                    <label for = "make">Car Make:</label>
+                    <select id = 'make', name = "make", required><br>
+                        <option value = selected></option>
+                        {% for make in makes %}
+                        <option value = {{make[0]}}>{{make[0]}}</option>
+                        {% endfor %}
+                    </select><br>
+
+                    <label for = "model">Car Model:</label>
+                    <select id = 'model', name = "model", required><br>
+                        <option value = selected></option>
+                        {% for model in models %}
+                        <option value = {{model[0]}}>{{model[0]}}</option>
+                        {% endfor %}
+                    </select><br>
+                    
+                    <label for = "year">Year:</label>
+                    <select id = 'year', name = "year", required>
+                        <option value = selected></option>
+                        {% for year in years %}
+                        <option value = {{year[0]}}>{{year[0]}}</option>
+                        {% endfor %}
+                    </select><br><br>
+                </div>
+
+                <label for = "rating">Rating:</label><br>
+                <input type = "number", min = 1, max = 10, id = "rating", name = "rating", required><br><br>
+                <label for = "review">Review:</label><br>
+                <textarea name = "review", placeholder = "Type your review here", id = "add_review_textarea"></textarea><br><br>
+                <input type = "Submit" value = "Submit">
+            </form>
+        </main>
+        </div>
+        <div class ="side">
+            <h2>This goes on the right</h2>
+        </div>
+        <div class = "bottom">
+        </div>
+    </div>
+</body>
+</html>

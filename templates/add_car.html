@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Car</title>
+    <link rel = "stylesheet" type="text/css" href='static/style.css'>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/car" class = "active">Add a Car</a></li>
+            <li><a href="/view">View Cars</a></li>
+            <li><a href="review">Add a Review</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class = "body">
+        <div class = "main">
+        <main>
+            <h2>Please Enter the information of a new car</h2>
+            <form method = "POST" action = "/car">
+                <label for = "make">Car Make:</label><br>
+                <input type = "text", id = "make", name = "make", required><br>
+                <label for = "model">Car Model:</label><br>
+                <input type = "text", id = "model", name = "model", required><br>
+                <label for = "year">Year:</label><br>
+                <input type = "text", id = "year", name = "year", required><br>
+                <input type = "submit", value = "Submit">
+            </form>
+        </main>
+        </div>
+        <div class ="side">
+            <h2>This goes on the right</h2>
+        </div>
+        <div class = "bottom">
+        </div>
+    </div>
+</body>
+</html>

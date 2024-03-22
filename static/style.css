@@ -1,0 +1,168 @@
+/* navigation bar */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #b41414f3;
+    border-radius: 0.5em;
+    border: 2px solid black; /* Set border with border property */
+}
+
+nav ul li {
+    float:left;
+}
+
+nav ul li a {
+display: block;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+color:#FFFFFF;
+}
+
+nav ul li a:hover:not(.active) {
+    background-color: #980a0a;
+}
+
+nav ul a.active {
+    background-color: #ff0000;
+    font-weight: bold;
+}
+
+nav ul li.right {
+    float: right;
+}
+/* End Navigation bar */
+
+
+/* homepage */
+.body {
+    display: flex;
+    justify-content: space-between;
+}
+.main {
+    width: 78%;
+    height: 68vh;
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-radius: 0.5em;
+    white-space: pre-warp;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color:#9999b580;
+    font-weight: bold;
+    overflow-y: auto;
+    border-radius: 0.5em;
+    border: 1px solid black;
+}
+
+.side {
+    text-align: left;
+    width: 20%;
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 0.5em;
+    white-space: pre-wrap;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    background-color: #302d30;
+    color:#ffffff;
+    font-weight: normal;
+    border: 1px solid black;
+}
+
+
+.bottom {
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    border-radius: 0.5em;
+    white-space: pre-wrap;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    background-color: #302d30;
+    color:#ffffff;
+    font-weight: normal;
+    position: absolute;
+    bottom: 2px;
+    width: 98.5%;
+    height: 22%;
+    border: 1px solid black;
+}
+
+.main img {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin-right: 2em;
+}
+/* End homepage */
+
+
+/* Review */
+#review {
+    width: 75%; 
+    height: 100px; 
+    resize: vertical;
+    caret-color: black;
+    padding: 10px;
+    box-sizing: border-box; 
+    white-space: pre-wrap;
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+    margin-bottom: 20px; 
+
+    position: relative;
+    left: 0;
+    outline: none;
+    
+    border-color: rgba(0, 0, 0, .15);
+    }
+
+.main #add_review_textarea {
+    width: 30%;
+    height: 150px;
+}
+
+#make_model_year {
+    display: flex;
+}
+
+#make_model_year label {
+    flex: 0, 0, 100px;
+    margin-right: 5px; /* Add spacing between labels */
+}
+
+#make_model_year select {
+    height: 2.5vh;
+    margin-right: 50px;
+}
+
+/* End Review */
+
+
+/* Car info */
+.main #car_info_textarea{
+    height: 120px;
+    width: 40vh;
+    margin-left: 10px;
+}
+
+.main #car_info {
+    margin-left: 10px;
+}
+
+.main #submit{
+    margin-left: 10px;
+}
+
+main h3 {
+    font-size: 30px;
+}
+/* Car info */
