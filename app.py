@@ -57,7 +57,7 @@ def car():
         conn.commit()
         if 'photo' in request.files:
             photo = request.files['photo']
-            photo.save('static/pictures/' + photo.filename)
+            photo.save('static/pictures/' + make +', '+ model + ', ' + year + '.jpg')
         return redirect(url_for("home", message = "Car added"))
     return render_template("add_car.html")
         
