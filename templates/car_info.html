@@ -22,7 +22,7 @@
         <main>
             <h1>{{car[1]}}, {{car[2]}}, {{car[3]}}</h1>
             <img src="{{ url_for('static', filename='pictures/' + car[1] + ', ' + car[2] + ', ' + car[3] | string + '.jpg') }}">
-            <h3>&nbsp;Add a review</h3>
+            <h3>Add a review</h3>
             <form method = "POST" action = "/pictures/{{car[0]}}">
                 <label for = "user", id ="car_info">Name:</label><br>
                 <input type = "text", id ="car_info", name = "user", placeholder = "Your name"><br><br>
