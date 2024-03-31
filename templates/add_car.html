@@ -21,13 +21,15 @@
         <div class = "main">
         <main>
             <h2>Please Enter the information of a new car</h2>
-            <form method = "POST" action = "/car">
+            <form method = "POST" action = "/car" enctype="multipart/form-data">
                 <label for = "make">Car Make:</label><br>
                 <input type = "text", id = "make", name = "make", required><br>
                 <label for = "model">Car Model:</label><br>
                 <input type = "text", id = "model", name = "model", required><br>
                 <label for = "year">Year:</label><br>
                 <input type = "text", id = "year", name = "year", required><br>
+                <label for = "Photo">Photo:</label><br>
+                <input type="file" name="photo" accept="image/*">
                 <input type = "submit", value = "Submit">
             </form>
         </main>

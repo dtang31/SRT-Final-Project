@@ -55,6 +55,9 @@ def car():
         cursor = conn.cursor()
         cursor.execute('INSERT INTO flaskapp_cars (Make, Model, Year) values(%s,%s,%s)', (make, model, year))
         conn.commit()
+        if 'photo' in request.files:
+            photo = request.files['photo']
+            photo.save('static/pictures/' + photo.filename)
         return redirect(url_for("home", message = "Car added"))
     return render_template("add_car.html")
         
