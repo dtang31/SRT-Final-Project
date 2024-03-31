@@ -13,7 +13,7 @@ conn = mysql.connector.connect(
 @app.route('/')
 def home():
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM flaskapp_reviews")
+    cursor.execute("SELECT * FROM flaskapp_reviews order by date desc limit 15")
     users = cursor.fetchall()
     return render_template('home.html',users = users)
 
