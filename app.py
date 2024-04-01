@@ -68,7 +68,7 @@ def about():
 @app.route('/view')
 def view_cars():
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM flaskapp_cars")
+    cursor.execute("SELECT *, CONCAT(Make,', ', Model, ', ',Year, '.') AS MMY FROM flaskapp_cars")
     cars = cursor.fetchall()
     return render_template('view_cars.html', cars = cars)
 
@@ -90,6 +90,15 @@ def information(id):
         conn.commit()
         return redirect(url_for('home', message = "Review Submitted"))
     return render_template('car_info.html', car = car)
+
+
+@app.route('/review_all/<MMY>', methods = ['GET'])
+def review_one(MMY):
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM flaskapp_reviews WHERE car = %s", (MMY,))
+    reviews = cursor.fetchall()
+    return render_template('review_one.html', reviews = reviews)
+
 
 if __name__ == "__main__":
     app.run(debug = True)
