@@ -57,7 +57,8 @@ def car():
         conn.commit()
         if 'photo' in request.files:
             photo = request.files['photo']
-            photo.save('static/pictures/' + make +', '+ model + ', ' + year + '.jpg')
+            if photo.filename != '':
+                photo.save('static/pictures/' + make +', '+ model + ', ' + year + '.jpg')
         return redirect(url_for("home", message = "Car added"))
     return render_template("add_car.html")
         
@@ -97,7 +98,7 @@ def review_one(MMY):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM flaskapp_reviews WHERE car = %s", (MMY,))
     reviews = cursor.fetchall()
-    return render_template('review_one.html', reviews = reviews)
+    return render_template('review_one.html', reviews = reviews, MMY = MMY)
 
 
 if __name__ == "__main__":
