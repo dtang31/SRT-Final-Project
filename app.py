@@ -20,7 +20,7 @@ def home():
 @app.route('/review', methods = ['GET', 'POST'])
 def review():
     cursor = conn.cursor()
-    cursor.execute("SELECT DISTINCT Make FROM flaskapp_cars")
+    cursor.execute("SELECT Concat(Make,',',Model,',',Year,'.') as makes FROM flaskapp_cars;")
     makes = cursor.fetchall()  
     cursor.execute("SELECT DISTINCT Model FROM flaskapp_cars")
     models = cursor.fetchall()
@@ -30,21 +30,16 @@ def review():
         user = request.form['user']
         if user == "":
             user = "Anonymous"
-        car_tuple = request.form['make'], request.form['model'], request.form['year']
-        car = ""
-        for cars in car_tuple:
-            if cars == car_tuple[-1]:
-                car = car + str(cars) + "."
-            else:
-                car = car + str(cars) + ", "
+        car = request.form['make']
+        mmy = ", ".join(car.split(','))
         date = datetime.now()
         rating = request.form['rating']
         review = request.form['review']
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO flaskapp_reviews (User, Car, Date, Rating, Review) values(%s, %s, %s, %s, %s)', (user, car, date, rating, review)) 
+        cursor.execute('INSERT INTO flaskapp_reviews (User, Car, Date, Rating, Review) values(%s, %s, %s, %s, %s)', (user, mmy, date, rating, review)) 
         conn.commit()
         return redirect(url_for('home', message = "Review Added Successfully!"))
-    return render_template('add_review.html', makes = makes, models = models, years = years)
+    return render_template('add_review.html', makes = makes)
 
 @app.route('/car', methods = ['GET', 'POST'])
 def car():

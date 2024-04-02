@@ -26,29 +26,13 @@
                 <input type = "text", id ="user", name = "user", placeholder = "Your name"><br><br>
                 
                 <div id = "make_model_year">
-                    <label for = "make">Car Make:</label>
+                    <label for = "make">Car Make, Model, Year:</label>
                     <select id = 'make', name = "make", required><br>
                         <option value = selected></option>
                         {% for make in makes %}
                         <option value = {{make[0]}}>{{make[0]}}</option>
                         {% endfor %}
                     </select><br>
-
-                    <label for = "model">Car Model:</label>
-                    <select id = 'model', name = "model", required><br>
-                        <option value = selected></option>
-                        {% for model in models %}
-                        <option value = {{model[0]}}>{{model[0]}}</option>
-                        {% endfor %}
-                    </select><br>
-                    
-                    <label for = "year">Year:</label>
-                    <select id = 'year', name = "year", required>
-                        <option value = selected></option>
-                        {% for year in years %}
-                        <option value = {{year[0]}}>{{year[0]}}</option>
-                        {% endfor %}
-                    </select><br><br>
                 </div>
 
                 <label for = "rating">Rating:</label><br>
