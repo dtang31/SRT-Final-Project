@@ -20,18 +20,15 @@ def home():
 @app.route('/review', methods = ['GET', 'POST'])
 def review():
     cursor = conn.cursor()
-    cursor.execute("SELECT Concat(Make,',',Model,',',Year,'.') as makes FROM flaskapp_cars;")
+    #no space after period, otherwise tuncate when return from html
+    cursor.execute("SELECT Concat(Make,',',Model,',',Year,'.') as makes FROM flaskapp_cars;") 
     makes = cursor.fetchall()  
-    cursor.execute("SELECT DISTINCT Model FROM flaskapp_cars")
-    models = cursor.fetchall()
-    cursor.execute("SELECT DISTINCT Year FROM flaskapp_cars")
-    years = cursor.fetchall()
     if request.method == 'POST':
         user = request.form['user']
         if user == "":
             user = "Anonymous"
         car = request.form['make']
-        mmy = ", ".join(car.split(','))
+        mmy = ", ".join(car.split(',')) # compiled with our format.
         date = datetime.now()
         rating = request.form['rating']
         review = request.form['review']
