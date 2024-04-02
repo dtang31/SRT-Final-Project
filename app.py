@@ -20,7 +20,7 @@ def home():
 @app.route('/review', methods = ['GET', 'POST'])
 def review():
     cursor = conn.cursor()
-    #no space after period, otherwise tuncate when return from html
+    #no space after period, otherwise tuncate when variable return from html
     cursor.execute("SELECT Concat(Make,',',Model,',',Year,'.') as makes FROM flaskapp_cars;") 
     makes = cursor.fetchall()  
     if request.method == 'POST':

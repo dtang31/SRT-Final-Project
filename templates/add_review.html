@@ -25,15 +25,14 @@
                 <label for = "user">Name:</label><br>
                 <input type = "text", id ="user", name = "user", placeholder = "Your name"><br><br>
                 
-                <div id = "make_model_year">
-                    <label for = "make">Car Make, Model, Year:</label>
-                    <select id = 'make', name = "make", required><br>
-                        <option value = selected></option>
-                        {% for make in makes %}
-                        <option value = {{make[0]}}>{{make[0]}}</option>
-                        {% endfor %}
-                    </select><br>
-                </div>
+                <label for = "make">Car Make, Model, Year:</label><br>
+                <select id = 'make', name = "make", required><br><br>
+                    <option value = selected></option>
+                    {% for make in makes %}
+                    <option value = {{make[0]}}>{{make[0]}}</option>
+                    {% endfor %}
+                </select><br><br>
+                
 
                 <label for = "rating">Rating:</label><br>
                 <input type = "number", min = 1, max = 10, id = "rating", name = "rating", required><br><br>
@@ -44,7 +43,7 @@
         </main>
         </div>
         <div class ="side">
-            <h2>This goes on the right</h2>
+            <h2>Input your review directly for various car</h2>
         </div>
         <div class = "bottom">
         </div>
