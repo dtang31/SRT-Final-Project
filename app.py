@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import shutil
 import mysql.connector
 from datetime import datetime
 app = Flask(__name__)
@@ -20,7 +21,7 @@ def home():
 @app.route('/review', methods = ['GET', 'POST'])
 def review():
     cursor = conn.cursor()
-    #no space after period, otherwise tuncate when variable return from html
+    #no space after comma, otherwise tuncate when variable return from html
     cursor.execute("SELECT Concat(Make,',',Model,',',Year,'.') as makes FROM flaskapp_cars;") 
     makes = cursor.fetchall()  
     if request.method == 'POST':
@@ -51,6 +52,8 @@ def car():
             photo = request.files['photo']
             if photo.filename != '':
                 photo.save('static/pictures/' + make +', '+ model + ', ' + year + '.jpg')
+            else:
+                shutil.copy('static/pictures/template.jpg', 'static/pictures/' + make +', '+ model + ', ' + year + '.jpg')
         return redirect(url_for("home", message = "Car added"))
     return render_template("add_car.html")
         
