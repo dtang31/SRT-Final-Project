@@ -53,3 +53,8 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-03-22 17:54:02
+
+
+
+#####Update DB structure #######
+ALTER TABLE flaskapp_reviews add COLUMN `likecount` int NOT NULL;

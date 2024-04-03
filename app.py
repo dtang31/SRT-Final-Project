@@ -87,6 +87,24 @@ def information(id):
         return redirect(url_for('home', message = "Review Submitted"))
     return render_template('car_info.html', car = car)
 
+@app.route('/useful/<int:id>/<int:likenumber>', methods = ['GET'])
+def thumbup(id,likenumber):
+    likenumber +=1
+    #if request.method == 'POST':
+    cursor = conn.cursor()
+    cursor.execute('UPDATE flaskapp_reviews set likecount = %s where id = %s', (likenumber, id,)) 
+    conn.commit()
+    #    return redirect(url_for('home', message = "Review Submitted"))
+    return redirect(url_for('home', message = "Like counted"))
+
+@app.route('/useful_one/<int:id>/<int:likenumber>/<MMY>', methods = ['GET'])
+def thumbup_one(id,likenumber,MMY):
+    likenumber +=1
+    cursor = conn.cursor()
+    cursor.execute('UPDATE flaskapp_reviews set likecount = %s where id = %s', (likenumber, id,)) 
+    conn.commit()
+    return redirect(url_for('review_one', MMY=MMY))
+
 
 @app.route('/review_all/<MMY>', methods = ['GET'])
 def review_one(MMY):
