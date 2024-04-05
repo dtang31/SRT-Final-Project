@@ -14,11 +14,11 @@ nav ul li {
 }
 
 nav ul li a {
-display: block;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-color:#FFFFFF;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color:#FFFFFF;
 }
 
 nav ul li a:hover:not(.active) {
@@ -36,11 +36,29 @@ nav ul li.right {
 /* End Navigation bar */
 
 
-/* homepage */
+/* Mainpage */
+.top {
+    overflow-x: hidden; 
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.top img {
+    height: 200px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: -15px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+}
+
 .body {
     display: flex;
     justify-content: space-between;
+    overflow: auto;
+    max-width: 100%;
 }
+
 .main {
     width: 78%;
     height: 68vh;
@@ -48,7 +66,6 @@ nav ul li.right {
     padding-left: 10px;
     padding-right: 5px;
     padding-bottom: 5px;
-    border-radius: 0.5em;
     white-space: pre-warp;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color:#9999b580;
@@ -62,12 +79,12 @@ nav ul li.right {
     text-align: left;
     width: 20%;
     margin-top: 2px;
+    
     padding-left: 10px;
     padding-bottom: 5px;
     border-radius: 0.5em;
-    white-space: pre-wrap;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
+    font-size: 20px;
     background-color: #302d30;
     color:#ffffff;
     font-weight: normal;
@@ -76,22 +93,23 @@ nav ul li.right {
 
 
 .bottom {
-    text-align: left;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    border-radius: 0.5em;
-    white-space: pre-wrap;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
-    background-color: #302d30;
-    color:#ffffff;
-    font-weight: normal;
     position: absolute;
-    bottom: 2px;
-    width: 98.5%;
-    height: 22%;
+    width: 99%;
+    bottom: -240px;
+    height: 180px;
+    background-color: #302d30;
     border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+.bottom2 {
+    position: absolute;
+    width: 99%;
+    height: 220px;
+    bottom: 0;
+    background-color: #302d30;
+    border: 1px solid black;
+    border-radius: 0.5em;
 }
 
 .main img {
@@ -100,9 +118,76 @@ nav ul li.right {
     float: left;
     margin-right: 2em;
 }
-/* End homepage */
+/* End mainpage */
 
+/* Bottom Image */
+.bottom_img {
+    position: absolute;
+    max-width: 100%;
+    height: 55%;
+    left: 10px;
+    top: -15px;
+}
 
+.bottom_img2 { 
+    position: absolute;
+    bottom: 70px;
+    left: 25px;
+    max-width: 16%;
+    height: auto;
+}
+
+.bottom2_img {
+    position: absolute;
+    max-width: 100%;
+    height: 55%;
+    left: 10px;
+    top: -15px;
+}
+
+.bottom2_img2 { 
+    position: absolute;
+    bottom: 70px;
+    left: 25px;
+    max-width: 16%;
+    height: auto;
+}
+/* End bottom image */
+
+/* Bottom Text */
+.bottom .bottomtext  {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 14px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.bottom_copyright {
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.bottom2 .bottom2text  {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 14px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.bottom2_copyright {
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 /* Review */
 #review {
     width: 75%; 
@@ -117,11 +202,9 @@ nav ul li.right {
     border: 1px solid #ccc; 
     box-sizing: border-box; 
     margin-bottom: 20px; 
-
     position: relative;
     left: 0;
     outline: none;
-    
     border-color: rgba(0, 0, 0, .15);
     }
 
