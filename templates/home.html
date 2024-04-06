@@ -32,7 +32,7 @@
                     <th>Date</th>
                     <th>Rating</th>
                     <th>Review</th>
-                    <th>Found Useful</th>
+                    <th style=text-align:cetner;>Found Useful</th>
                     <th>I Like it</th>
                 <tr>
                 {% for user in users %}
@@ -40,9 +40,9 @@
                     <td>{{user[1]}}</td>
                     <td>{{user[2]}}</td>
                     <td>{{user[3]}}</td>
-                    <td>{{user[4]}}</td>
+                    <td style=text-align:center;>{{user[4]}}</td>
                     <td>{{user[5]}}</td>
-                    <td>{{user[6]}}</td>
+                    <td style=text-align:center;>{{user[6]}}</td>
                     <td>
                         <a href = "/useful/{{user[0]}}/{{user[6]}}">Like</a>
                     </td>

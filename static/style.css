@@ -249,3 +249,13 @@ main h3 {
     font-size: 30px;
 }
 /* Car info */
+
+/* Table on View Cars */
+
+.view_table {
+    width: 33%;
+    height: 55vh;
+    text-align: center;
+}
+
+/* End Table on view cars */
