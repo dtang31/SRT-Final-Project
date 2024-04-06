@@ -56,14 +56,14 @@
             <br><br>
             <h2>Indicate your preference</h2><br>
             <form method = "POST" action = "/">
-                <label for = "make">Enter your favoriate car brand?</label><br>
+                <label for = "make">Enter your favoriate car brand</label><br>
                 <select id = 'make', name = "make"><br><br>
                     <option value = selected></option>
                     {% for make in makes %}
                     <option value = {{make[0]}}>{{make[0]}}</option>
                     {% endfor %}
                 </select><br><br>
-                <label for = "model">Enter your favoriate car model?</label><br>
+                <label for = "model">Enter your favoriate car model</label><br>
                 <select id = 'model', name = "model"><br><br>
                     <option value = selected></option>
                     {% for model in models %}
