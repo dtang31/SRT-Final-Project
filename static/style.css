@@ -79,7 +79,6 @@ nav ul li.right {
     text-align: left;
     width: 20%;
     margin-top: 2px;
-    
     padding-left: 10px;
     padding-bottom: 5px;
     border-radius: 0.5em;
@@ -154,6 +153,42 @@ nav ul li.right {
 }
 /* End bottom image */
 
+/* Start Side Image */
+.side_img {
+    position: absolute;
+    top: 425px;
+    right: 28px;
+    width: 18%;
+    max-height: 100%;
+}
+.side_img1 {
+    position: absolute;
+    top: 500px;
+    right: 35px;
+    width: 18%;
+    max-height: 100%;
+}
+.side2_img1 {
+    position: absolute;
+    top: 200px;
+    right: 35px;
+    width: 18%;
+    max-height: 100%;
+}
+.side_img2 {
+    position: absolute;
+    top: 750px;
+    right: 35px;
+    width: 18%;
+    max-height: 100%;
+}
+.side2_img2 {
+    position: absolute;
+    top: 450px;
+    right: 35px;
+    width: 18%;
+    max-height: 100%;
+}
 /* Bottom Text */
 .bottom .bottomtext  {
     position: absolute;
@@ -188,6 +223,46 @@ nav ul li.right {
     font-weight: bold;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+/* End bottom text */
+
+/* Side Text */
+.side_text1 {
+    position: absolute;
+    top: 450px;
+    right: 180px;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.side2_text1 {
+    position: absolute;
+    top: 150px;
+    right: 180px;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.side_text2 {
+    position: absolute;
+    top: 700px;
+    right: 165px;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.side_text3 {
+    position: absolute;
+    top: 700px;
+    right: 180px;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.side2_text3 {
+    position: absolute;
+    top: 400px;
+    right: 180px;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* End side text */
 /* Review */
 #review {
     width: 75%; 

@@ -17,7 +17,7 @@
         </ul>
     </nav>
     <div class = "top">
-        <h1>Python Car Review </h1>
+        <h1>Python Car Review Site</h1>
         <img src = 'static/pictures/Top Logo.jpg'>
     </div>
     
@@ -53,10 +53,25 @@
         </main>
         </div>
         <div class ="side">
-            <ol>
-                <li>User submit picture</li><br>
-                <li>Reviews can be made for tailor made model</li><br>
-                <li>Create you own car record</li><br>
+            <br><br>
+            <h2>Indicate your preference</h2><br>
+            <form method = "POST" action = "/">
+                <label for = "make">Enter your favoriate car brand?</label><br>
+                <select id = 'make', name = "make"><br><br>
+                    <option value = selected></option>
+                    {% for make in makes %}
+                    <option value = {{make[0]}}>{{make[0]}}</option>
+                    {% endfor %}
+                </select><br><br>
+                <label for = "model">Enter your favoriate car model?</label><br>
+                <select id = 'model', name = "model"><br><br>
+                    <option value = selected></option>
+                    {% for model in models %}
+                    <option value = {{model[0]}}>{{model[0]}}</option>
+                    {% endfor %}
+                </select><br><br><br>
+                <input type = "Submit" value = "Recommend me">
+            </form>
             </div>
         <div class = "bottom">
             <img class = "bottom_img" src = "static/pictures/Seneca Logo 1.png">

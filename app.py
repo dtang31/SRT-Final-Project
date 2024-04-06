@@ -12,13 +12,25 @@ conn = mysql.connector.connect(
     database = 'flaskapp'
 )
 
-@app.route('/')
+@app.route('/', methods = ['GET', 'POST'])
 def home():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM flaskapp_reviews order by date desc limit 15")
     users = cursor.fetchall()
-    return render_template('home.html',users = users)
-
+    cursor.execute("SELECT Distinct Make FROM flaskapp_cars;")
+    makes = cursor.fetchall()
+    cursor.execute("SELECT Distinct Model FROM flaskapp_cars;")
+    models = cursor.fetchall()
+    if request.method == 'POST':
+        make = request.form['make']
+        model = request.form['model']
+        cursor = conn.cursor()
+        cursor.execute("SELECT *, CONCAT(Make,', ', Model, ', ',Year, '.') AS MMY FROM flaskapp_cars where make = %s OR model = %s", (make, model))
+        results = cursor.fetchall()
+        return render_template("recommendation.html", results=results)
+    return render_template('home.html',users = users, makes = makes, models = models)
+       
+           
 @app.route('/review', methods = ['GET', 'POST'])
 def review():
     cursor = conn.cursor()
@@ -62,12 +74,26 @@ def car():
 def about():
     return render_template("about.html")
 
-@app.route('/view')
+@app.route('/view', methods = ['GET', 'POST'])
 def view_cars():
     cursor = conn.cursor()
     cursor.execute("SELECT *, CONCAT(Make,', ', Model, ', ',Year, '.') AS MMY FROM flaskapp_cars")
     cars = cursor.fetchall()
-    return render_template('view_cars.html', cars = cars)
+    cursor.execute("SELECT Distinct Make FROM flaskapp_cars;")
+    makes = cursor.fetchall()
+    cursor.execute("SELECT Distinct Model FROM flaskapp_cars;")
+    models = cursor.fetchall()
+    cursor.execute("SELECT Distinct Year FROM flaskapp_cars;")
+    years = cursor.fetchall()
+    if request.method == "POST":
+        make = request.form['make']
+        model = request.form['model']
+        year = request.form['year']
+        cursor = conn.cursor()
+        cursor.execute("SELECT *, CONCAT(Make,', ', Model, ', ',Year, '.') AS MMY FROM flaskapp_cars where make = %s OR model = %s OR year = %s", (make, model, year))
+        results = cursor.fetchall()
+        return render_template("recommendation.html", results=results)
+    return render_template('view_cars.html', cars = cars, makes = makes, models = models, years = years)
 
 @app.route('/pictures/<int:id>', methods = ['GET', 'POST'])
 def information(id):
