@@ -23,7 +23,7 @@
     <div class = "body">
         <div class = "main">
         <main>
-            <h2>Here are your recommendations</h2>
+            <h2>Here are your search results</h2>
             <table border = "2">
                 <tr>
                     <th>Car Make</th>
@@ -38,12 +38,16 @@
                     <td>{{result[3]}}</td>
                     <td><a href = "/review_all/{{result[4]}}">Check</a></td>
                 </tr>
-                {% endfor %}
+                {% endfor %} 
             </table>  
         </main>
         </div>
         <div class ="side">
-            <h2></h2>
+            <h2>Recently Reviewed</h2>
+            <p class = "side_text1">Kia Stinger 2023</p>
+            <img class = "side_img1" src="/static/pictures/Kia, Stinger, 2023.jpg"> 
+            <p class = "side_text3">Acura MDX 2024</p>
+            <img class = "side_img2" src="/static/pictures/Acura, MDX, 2024.jpg">
         </div>
         <div class = "bottom">
             <img class = "bottom_img" src = "static/pictures/Seneca Logo 1.png">

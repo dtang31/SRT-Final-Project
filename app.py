@@ -92,7 +92,7 @@ def view_cars():
         cursor = conn.cursor()
         cursor.execute("SELECT *, CONCAT(Make,', ', Model, ', ',Year, '.') AS MMY FROM flaskapp_cars where make = %s OR model = %s OR year = %s", (make, model, year))
         results = cursor.fetchall()
-        return render_template("recommendation.html", results=results)
+        return render_template("search_results.html", results=results)
     return render_template('view_cars.html', cars = cars, makes = makes, models = models, years = years)
 
 @app.route('/pictures/<int:id>', methods = ['GET', 'POST'])
